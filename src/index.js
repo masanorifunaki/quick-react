@@ -9,6 +9,7 @@ import MyBook from './MyBook';
 import MyArticle from './MyArticle'
 import MyEvent from './MyEvent'
 import MyPool from './MyPool'
+import MyState from './MyState'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -54,7 +55,7 @@ const articles = [
 ];
 
 ReactDOM.render(
- <MyPool/>,
+ <MyState/>,
   document.getElementById('root')
 );
 
