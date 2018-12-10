@@ -12,6 +12,8 @@ import MyPool from './MyPool'
 import MyState from './MyState'
 import MyParent from './MyParent'
 import MyForm from './MyForm'
+import MyTextarea from  './form-textarea'
+import MyFile from './form-file'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -57,7 +59,7 @@ const articles = [
 ];
 
 ReactDOM.render(
- <MyForm/>,
+ <MyFile/>,
   document.getElementById('root')
 );
 
