@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-export default class MyHello extends Component{
+export default class MyHello extends React.Component {
   render() {
-    return <div>Hello! {this.props.name} !</div>
+    return (
+      <div>
+        Hello, React!!
+      </div>
+    );
   }
 }
-
-MyHello.propTypes = {
-  name: PropTypes.string.isRequired
-};

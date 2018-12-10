@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// 4 ルーティング関連の機能をインポート
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+// ルーティングで利用するコンポーネントをインポート
+import MyTop from './MyTop';
+import MyHello from './MyHello';
+import MyArticle from './MyArticle';
 
-class App extends Component {
-  render() {
+export default class App extends Component {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className='App-title'>Hello!</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          {/* 3 ルーティング経由のリンクリストを準備 */}
+          <ul>
+            <li><Link to="/">TOP</Link></li>
+            <li><Link to="/hello">Hello</Link></li>
+            <li><Link to="/article/13">Article 13</Link></li>
+            <li><Link to="/article/108">Article 108</Link></li>
+          </ul>
+          <hr/>
+          {/* 2 ルーティング設定 条件にマッチしたコンポーネントを出力 */}
+          <Switch>
+            <Route exact path="/" component={MyTop}/>
+            <Route path="/hello" component={MyHello}/>
+            <Route path="/article/:id" component={MyArticle}/>
+            <Route component={MyTop}/>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
-
-export default App;
